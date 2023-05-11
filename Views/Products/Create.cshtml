@@ -1,0 +1,59 @@
+﻿@model EntityFrameworkProject.Models.Product
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Create</h2>
+<form action="/Products/Create" method="post" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="ProductName">Product Name</label>
+            <input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Product Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Price">Price</label>
+            <input type="text" class="form-control" id="Price" name="Price"  placeholder="Price">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="DateOfPurchase">Date Of Purchase</label>
+            <input type="text" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date Of Purchase">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="CategoryID">Category ID</label>
+            <select class="form-control" id="CategoryID" name="CategoryID">
+                <option value="">Please Setect</option>
+                @foreach(var item in ViewBag.Categories)
+            {
+                <option value="item.CategoryID">@item.CategoryName</option>
+            }
+                </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="BrandID">Brand ID</label>
+            <select class="form-control" id="BrandID" name="BrandID">
+                <option value="">Please Setect</option>
+                @foreach (var item in ViewBag.Brand)
+                {
+                    <option value="item.BrandID">@item.BrandName</option>
+                }
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class=" form-control-file" id="Image" name="Photo"/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Active" name="Active">
+            <label for="Active" class="form-check-label">Active</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+    <a class="btn btn-danger" href="/products/index">Cancel</a>
+</form>
+
