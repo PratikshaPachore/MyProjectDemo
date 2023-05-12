@@ -87,7 +87,7 @@
                 }
             }
         </th>
-        <th style="width:10%">
+        @*<th style="width:10%">
             @if (ViewBag.IconClass == "fa-sort-desc")
             {
                 <a href="/products/index?SortColumn=CategoryID&IconClass=fa-sort-asc&PageNo=1">Category Name</a>
@@ -104,8 +104,8 @@
                     <i class="fa @ViewBag.IconClass"></i>
                 }
             }
-        </th>
-        <th style="width:10%">
+        </th>*@
+        @*<th style="width:10%">
             @if (ViewBag.IconClass == "fa-sort-desc")
             {
                 <a href="/products/index?SortColumn=BrandID&IconClass=fa-sort-asc&PageNo=1">Brand Name</a>
@@ -123,7 +123,7 @@
                 }
             }
 
-        </th>
+        </th>*@
 
     </tr>
     <tbody>
@@ -135,8 +135,8 @@
                 <td>@item.ProductName</td>
                 <td>@item.Price.Value.ToString("C")</td>
                 <td>@item.DateOfPurchase.Value.ToString("dd/MM/yyyy")</td>
-                <td>@item.Category.CategoryName</td>
-                <td>@item.Brand.BrandName</td>
+                @*<td>@item.Category.CategoryName</td>
+                <td>@item.Brand.BrandName</td>*@
 
                 <td>
                     <a href="/products/details/@item.ProductID">Details</a>
